@@ -3,13 +3,47 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>ru.elmdiag</groupId>
-        <artifactId>ELMDiag</artifactId>
-        <version>0.1</version>
+        <artifactId>elmdiag</artifactId>
+        <version>0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>Adapter</artifactId>
+	
+	<groupId>ru.elmdiag</groupId>
+    <artifactId>elmdiag-adapter</artifactId>
+	<version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+	
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
+	
+	<build>
+		<finalName>elmdiag-adapter</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>sources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
